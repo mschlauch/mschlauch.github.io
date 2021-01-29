@@ -1,0 +1,1349 @@
+:: StoryTitle
+origami venture
+
+
+:: StoryData
+{
+	"ifid": "98E92CE1-FC82-4A79-B27D-DA5C4C4643E6",
+	
+	"format": "SugarCube",
+	"format-version": "2.30.0",
+	"start": "Intro",
+	"zoom": 1
+}
+
+
+:: Story Stylesheet [stylesheet]
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('OpenDyslexic-Regular.otf'); /* IE9 Compat Modes */
+  
+}
+
+#story {
+    padding: 5px 5px;
+    margin-left:0;
+}
+#passages {
+	max-width:99%;
+	
+	
+}
+.passage {
+display:flex;
+	
+}
+.item {
+ flex: 0 32%;
+  flex-grow: 1;
+  height: 100px;
+    text-align: center;
+      padding: 0.5em;
+}
+
+.item + .item {
+  margin-left: 2%;
+}
+
+.itemside {
+ flex: 0 26.5%;
+  flex-grow: 1;
+  height: 100px;
+  text-align: center;
+  
+}
+.itemcentral {
+ flex: 0 47%;
+  flex-grow: 1;
+  height: 100px;
+  
+}
+
+
+.link-image img{
+width: 100%;
+position:relative;
+}
+
+body {
+  font-family: 'OpenDyslexic', Fallback, sans-serif;
+  font-size: 2vw;
+
+}
+
+tw-sidebar
+{
+display: none;
+}
+
+tw-passage {
+    display: inline-block;
+}
+
+tw-linkx:link img{border-color:#0645ad; border-style:solid; border-width:3px;}
+tw-link:hover img{border-color:#0645ad; border-style:solid; border-width:3px; text-decoration: underline;}
+tw-linkx:visited img, a:active img{border-color:#036; border-style:solid; border-width:3px;}
+
+img{
+ position:relative;
+ width:100%;
+    
+}
+
+video{
+    width: 100%;
+    height: auto;
+}
+
+#ui-bar {
+display: none;
+}
+.illustration {
+  max-width: 60px;
+	 
+}
+
+:: start {"position":"412,187","size":"100,100"}
+@@.item;<<if $branch2backwards>><<print $words_birdswan.ttitleb >><<else>><<print $words_birdswan.ttitle >><</if>>
+
+
+[[back to Intro->Intro]]@@
+
+@@.item;
+[img[...an easier way|swanorbirdfinal.jpg][birdswan01][$branch2backwards to false]]<<print $words_birdswan.t00 >>@@
+@@.item;
+[img[...a real challenge|craneorflappingfinal.jpg][flappingcrane01][$branch2backwards to false]]<<print $words_flappingcrane.t00 >>@@
+
+
+
+
+
+
+
+
+
+:: birdswan01 {"position":"292,337","size":"100,100"}
+
+@@.itemside;[img[ |01_birdswanfirst.jpg][start]]<<if $branch2backwards>><<print $words_birdswan.t01b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="01_birdswan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="01_birdswan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |01_birdswanlast.jpg][birdswan02]]<<if !$branch2backwards>><<print $words_birdswan.t01 >><</if>> 
+@@
+
+
+
+:: birdswan02 {"position":"292,487","size":"100,100"}
+
+@@.itemside;[img[ |02_birdswanfirst.jpg][birdswan01]]<<if $branch2backwards>><<print $words_birdswan.t02b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="02_birdswan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="02_birdswan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |02_birdswanlast.jpg][birdswan03]]<<if !$branch2backwards>><<print $words_birdswan.t02 >><</if>> 
+@@
+
+
+
+
+:: birdswan03 {"position":"291,637","size":"100,100"}
+
+@@.itemside;[img[ |03_birdswanfirst.jpg][birdswan02]]<<if $branch2backwards>><<set $attribute_memories to either($event_attributes)>> <<print $attribute_memories>> <<print $words_birdswan.t03b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="03_birdswan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="03_birdswan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |03_birdswanlast.jpg][birdswan04]]<<if !$branch2backwards>>   <<set $attribute_skill to either($event_attributes)>>  <<set $skill to either($things_a_bird_can_do)>> <<print $skill.replace(/#adjective#/g, "$attribute_skill")>>     <<print $words_birdswan.t03 >><</if>> 
+@@
+
+
+
+:: birdswan04 {"position":"387,772","size":"100,100"}
+
+@@.itemside;[img[ |04_birdswanfirst.jpg][birdswan03]]<<if $branch2backwards>><<print $words_birdswan.t04b >><</if>>@@
+
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="04_birdswan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="04_birdswan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |04_birdswanlast.jpg][birdswan05]]<<if !$branch2backwards>><<print $words_birdswan.t04 >><</if>>
+@@
+
+
+:: birdswan05 {"position":"229,770","size":"100,100"}
+
+
+
+@@.item;[img[ |04_birdswanlast.jpg][birdswan04][$branch2backwards to true]] <<set $attribute1 to either($attributes)>> <<print $attribute1>> <<print $words_birdswan.t05b >>@@
+@@.item;<<print $words_birdswan.t05 >>@@
+@@.item;[img[ |swanfinal.jpg][swan05][$branch3backwards to false]] <<set $attribute2 to either($attributes)>> <<print $attribute2>> <<print $words_swan.t04 >>@@
+
+@@.item;[img[ |birdfinal.jpg][bird05][$branch3backwards to false]] <<set $attribute3 to either($attributes)>> <<print $attribute3>> <<print $words_bird.t04 >> @@
+
+
+
+
+:: bird05 {"position":"205,928","size":"100,100"}
+
+@@.itemside;[img[ |05_birdfirst.jpg][birdswan05]]<<if $branch3backwards>><<print $words_bird.t05b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="05_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="05_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |05_birdlast.jpg][bird06]]
+<<if !$branch3backwards>><<print $words_bird.t05 >><</if>>
+@@
+
+
+:: bird06 {"position":"217,1087","size":"100,100"}
+
+@@.itemside;[img[ |06_birdfirst.jpg][bird05]]<<if $branch3backwards>> <<print $words_bird.t06b >> <</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="06_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="06_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |06_birdlast.jpg][bird07]]
+<<if !$branch3backwards>> <<print $words_bird.t06 >> <</if>>
+@@
+
+
+
+
+:: bird07 {"position":"217,1237","size":"100,100"}
+
+@@.itemside;[img[ |07_birdfirst.jpg][bird06]]<<if $branch3backwards>><<print $words_bird.t07b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="07_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="07_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+
+@@.itemside; 
+[img[ |07_birdlast.jpg][bird08]]
+<<if !$branch3backwards>><<print $words_bird.t07 >>
+<</if>>
+@@
+
+
+
+
+:: bird08 {"position":"216,1387","size":"100,100"}
+
+@@.itemside;[img[ |08_birdfirst.jpg][bird07]]<<if $branch3backwards>><<print $words_bird.t08b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="08_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="08_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |08_birdlast.jpg][bird09]]
+<<if !$branch3backwards>><<print $words_bird.t08 >>
+<</if>>
+@@
+
+
+:: bird09 {"position":"217,1537","size":"100,100"}
+
+@@.itemside;[img[ |09_birdfirst.jpg][bird08]]<<if $branch3backwards>><<print $words_bird.t09b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="09_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="09_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |09_birdlast.jpg][bird10]]
+<<if !$branch3backwards>><<print $words_bird.t09 >>
+<</if>>
+@@
+
+
+
+
+:: bird10 {"position":"217,1687","size":"100,100"}
+
+@@.itemside;[img[ |10_birdfirst.jpg][bird09]]<<if $branch3backwards>><<print $words_bird.t10b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="10_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="10_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |10_birdlast.jpg][bird11]]
+<<if !$branch3backwards>> <<set $attribute_paperpeople to either($attributes)>> <<print $attribute_paperpeople>> <<print $words_bird.t10 >>
+<</if>>
+@@
+
+
+
+
+:: bird11 {"position":"217,1837","size":"100,100"}
+
+
+@@.itemside;[img[ |11_birdfirst.jpg][bird10]]<<if $branch3backwards>><<print $words_bird.t11b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="11_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="11_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |11_birdlast.jpg][bird12]]
+<<if !$branch3backwards>><<print $words_bird.t11 >>
+<</if>>
+@@
+
+
+
+:: bird12 {"position":"217,1987","size":"100,100"}
+
+@@.itemside;[img[ |12_birdfirst.jpg][bird11]]<<if $branch3backwards>><<print $words_bird.t12b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="12_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="12_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |12_birdlast.jpg][bird13]]
+<<if !$branch3backwards>><<print $words_bird.t12 >>
+<</if>>
+@@
+
+
+:: bird13 {"position":"217,2137","size":"100,100"}
+
+@@.itemside;[img[ |13_birdfirst.jpg][bird12]]<<if $branch3backwards>><<print $words_bird.t13b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="13_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="13_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |13_birdlast.jpg][bird14]]
+<<if !$branch3backwards>><<print $words_bird.t13 >>
+<</if>>
+@@
+
+
+
+
+:: bird14 {"position":"217,2287","size":"100,100"}
+
+
+@@.itemside;[img[ |14_birdfirst.jpg][bird13]]<<if $branch3backwards>><<print $words_bird.t14b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="14_bird.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="14_bird_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>
+@@
+
+@@.itemside; 
+[img[ |14_birdlast.jpg][bird15]]
+<<if !$branch3backwards>><<print $words_bird.t14 >>
+<</if>>
+@@
+
+
+:: bird15 {"position":"217,2437","size":"100,100"}
+
+@@.item; 
+<<print $words_bird.t15 >>
+[img[A bird|birdfinal.jpg]]
+@@
+
+@@.itemside;[img[ |14_birdlast.jpg][bird14][$branch3backwards to true]] <<print $words_bird.t15b >>↺@@
+
+
+
+:: swan05 {"position":"368,920","size":"100,100"}
+@@.itemside;[img[ |05_swanfirst.jpg][birdswan05]]<<if $branch3backwards>><<print $words_swan.t05b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="05_swan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="05_swan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |05_swanlast.jpg][swan06]]
+<<if !$branch3backwards>><<print $words_swan.t05 >>
+<</if>>
+@@
+
+
+
+
+:: swan06 {"position":"367,1087","size":"100,100"}
+
+@@.itemside;[img[ |06_swanfirst.jpg][swan05]]<<if $branch3backwards>><<print $words_swan.t06b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="06_swan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="06_swan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |06_swanlast.jpg][swan07]]
+<<if !$branch3backwards>><<print $words_swan.t06 >>
+<</if>>
+@@
+
+
+
+:: swan07 {"position":"367,1237","size":"100,100"}
+@@.itemside;[img[ |07_swanfirst.jpg][swan06]]<<if $branch3backwards>><<print $words_swan.t07b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="07_swan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="07_swan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |07_swanlast.jpg][swan08]]
+<<if !$branch3backwards>><<print $words_swan.t07 >>
+<</if>>
+@@
+
+
+
+
+:: swan08 {"position":"367,1387","size":"100,100"}
+@@.itemside;[img[ |08_swanfirst.jpg][swan07]]<<if $branch3backwards>><<print $words_swan.t08b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="08_swan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="08_swan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |08_swanlast.jpg][swan09]]
+<<if !$branch3backwards>><<print $words_swan.t08 >>
+<</if>>
+@@
+
+
+
+:: swan09 {"position":"367,1537","size":"100,100"}
+@@.itemside;[img[ |09_swanfirst.jpg][swan08]]<<if $branch3backwards>><<print $words_swan.t09b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="09_swan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="09_swan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |09_swanlast.jpg][swan10]]
+<<if !$branch3backwards>><<print $words_swan.t09 >>
+<</if>>
+@@
+
+
+
+:: swan10 {"position":"367,1687","size":"100,100"}
+@@.itemside;[img[ |10_swanfirst.jpg][swan09]]<<if $branch3backwards>><<print $words_swan.t10b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="10_swan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="10_swan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |10_swanlast.jpg][swan11]]
+<<if !$branch3backwards>><<print $words_swan.t10 >>
+<</if>>
+@@
+
+
+
+:: swan11 {"position":"367,1837","size":"100,100"}
+@@.itemside;[img[ |11_swanfirst.jpg][swan10]]<<if $branch3backwards>><<print $words_swan.t11b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="11_swan.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="11_swan_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |11_swanlast.jpg][swan12]]
+<<if !$branch3backwards>><<print $words_swan.t11 >>
+<</if>>
+@@
+
+
+:: swan12 {"position":"367,1987","size":"100,100"}
+
+@@.item; 
+<<print $words_swan.t12 >>
+[img[|swanfinal.jpg]]
+@@
+
+@@.itemside;[img[ |11_swanlast.jpg][swan11][$branch3backwards to true]] <<print $words_swan.t12b >>↺@@
+
+
+:: flappingcrane01 {"position":"652,337","size":"100,100"}
+
+@@.itemside;[img[ |01_flappingcranefirst.jpg][start]]<<if $branch2backwards>><<print $words_flappingcrane.t01b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="01_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="01_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |01_flappingcranelast.jpg][flappingcrane02]]<<if !$branch2backwards>><<print $words_flappingcrane.t01 >><</if>>
+@@
+
+
+
+
+:: flappingcrane02 {"position":"651,488","size":"100,100"}
+
+@@.itemside;[img[ |02_flappingcranefirst.jpg][flappingcrane01]]<<if $branch2backwards>><<print $words_flappingcrane.t02b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="02_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="02_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |02_flappingcranelast.jpg][flappingcrane03]]<<if !$branch2backwards>><<print $words_flappingcrane.t02 >><</if>>
+@@
+
+
+:: flappingcrane03 {"position":"652,637","size":"100,100"}
+@@.itemside;[img[ |03_flappingcranefirst.jpg][flappingcrane02]]<<if $branch2backwards>><<print $words_flappingcrane.t03b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="03_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="03_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |03_flappingcranelast.jpg][flappingcrane04]]<<if !$branch2backwards>><<print $words_flappingcrane.t03 >><</if>>
+@@
+
+:: flappingcrane04 {"position":"652,787","size":"100,100"}
+@@.itemside;[img[ |04_flappingcranefirst.jpg][flappingcrane03]]<<if $branch2backwards>><<print $words_flappingcrane.t04b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="04_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="04_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |04_flappingcranelast.jpg][flappingcrane05]]<<if !$branch2backwards>><<print $words_flappingcrane.t04 >><</if>>
+@@
+
+
+:: flappingcrane05 {"position":"652,937","size":"100,100"}
+@@.itemside;[img[ |05_flappingcranefirst.jpg][flappingcrane04]]<<if $branch2backwards>><<print $words_flappingcrane.t05b >><<set $attribute_secret to either($event_attributes)>> <<print $attribute_secret>><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="05_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="05_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |05_flappingcranelast.jpg][flappingcrane06]]<<if !$branch2backwards>><<print $words_flappingcrane.t05 >><</if>>
+@@
+
+
+:: flappingcrane06 {"position":"652,1087","size":"100,100"}
+@@.itemside;[img[ |06_flappingcranefirst.jpg][flappingcrane05]]<<if $branch2backwards>><<print $words_flappingcrane.t06b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="06_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="06_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |06_flappingcranelast.jpg][flappingcrane07]]<<if !$branch2backwards>><<print $words_flappingcrane.t06 >><</if>>
+@@
+
+
+:: flappingcrane07 {"position":"652,1237","size":"100,100"}
+@@.itemside;[img[ |07_flappingcranefirst.jpg][flappingcrane06]]<<if $branch2backwards>><<print $words_flappingcrane.t07b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="07_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="07_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |07_flappingcranelast.jpg][flappingcrane08]]<<if !$branch2backwards>><<print $words_flappingcrane.t07 >><</if>>
+@@
+
+
+:: flappingcrane08 {"position":"652,1387","size":"100,100"}
+@@.itemside;[img[ |08_flappingcranefirst.jpg][flappingcrane07]]<<if $branch2backwards>><<print $words_flappingcrane.t08b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="08_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="08_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |08_flappingcranelast.jpg][flappingcrane09]]<<if !$branch2backwards>><<print $words_flappingcrane.t08 >><</if>>
+@@
+
+
+:: flappingcrane09 {"position":"652,1537","size":"100,100"}
+@@.itemside;[img[ |09_flappingcranefirst.jpg][flappingcrane08]]<<if $branch2backwards>><<print $words_flappingcrane.t09b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="09_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="09_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |09_flappingcranelast.jpg][flappingcrane10]]<<if !$branch2backwards>><<print $words_flappingcrane.t09 >><</if>>
+@@
+
+
+:: flappingcrane10 {"position":"652,1687","size":"100,100"}
+@@.itemside;[img[ |10_flappingcranefirst.jpg][flappingcrane09]]<<if $branch2backwards>><<print $words_flappingcrane.t10b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="10_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="10_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |10_flappingcranelast.jpg][flappingcrane11]]<<if !$branch2backwards>><<print $words_flappingcrane.t10 >><</if>>
+@@
+
+
+:: flappingcrane11 {"position":"652,1837","size":"100,100"}
+@@.itemside;[img[ |11_flappingcranefirst.jpg][flappingcrane10]]<<if $branch2backwards>><<print $words_flappingcrane.t11b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="11_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="11_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |11_flappingcranelast.jpg][flappingcrane12]]<<if !$branch2backwards>><<print $words_flappingcrane.t11 >><</if>>
+@@
+
+
+
+:: flappingcrane12 {"position":"652,1987","size":"100,100"}
+@@.itemside;[img[ |12_flappingcranefirst.jpg][flappingcrane11]]<<if $branch2backwards>><<print $words_flappingcrane.t12b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="12_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="12_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |12_flappingcranelast.jpg][flappingcrane13]]<<if !$branch2backwards>><<print $words_flappingcrane.t12 >><</if>>
+@@
+
+
+:: flappingcrane13 {"position":"652,2137","size":"100,100"}
+@@.itemside;[img[ |13_flappingcranefirst.jpg][flappingcrane12]]<<if $branch2backwards>><<print $words_flappingcrane.t13b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="13_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="13_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |13_flappingcranelast.jpg][flappingcrane14]]<<if !$branch2backwards>><<print $words_flappingcrane.t13 >><</if>>
+@@
+
+
+
+:: flappingcrane14 {"position":"652,2287","size":"100,100"}
+@@.itemside;[img[ |14_flappingcranefirst.jpg][flappingcrane13]]<<if $branch2backwards>><<print $words_flappingcrane.t14b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="14_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="14_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |14_flappingcranelast.jpg][flappingcrane15]]<<if !$branch2backwards>><<print $words_flappingcrane.t14 >><</if>>
+@@
+
+
+
+:: flappingcrane15 {"position":"652,2437","size":"100,100"}
+@@.itemside;[img[ |15_flappingcranefirst.jpg][flappingcrane14]]<<if $branch2backwards>><<print $words_flappingcrane.t15b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="15_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="15_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |15_flappingcranelast.jpg][flappingcrane16]]<<if !$branch2backwards>><<print $words_flappingcrane.t15 >> <<set $attribute_someevent to either($event_attributes)>> <<print $attribute_someevent>><</if>>
+@@
+
+
+
+:: flappingcrane16 {"position":"652,2587","size":"100,100"}
+@@.itemside;[img[ |16_flappingcranefirst.jpg][flappingcrane15]]<<if $branch2backwards>><<print $words_flappingcrane.t16b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="16_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="16_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |16_flappingcranelast.jpg][flappingcrane17]]<<if !$branch2backwards>><<print $words_flappingcrane.t16 >><</if>>
+@@
+
+
+:: flappingcrane17 {"position":"652,2737","size":"100,100"}
+@@.itemside;[img[ |17_flappingcranefirst.jpg][flappingcrane16]]<<if $branch2backwards>><<print $words_flappingcrane.t17b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="17_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="17_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |17_flappingcranelast.jpg][flappingcrane18]]<<if !$branch2backwards>><<print $words_flappingcrane.t17 >><</if>>
+@@
+
+
+:: flappingcrane18 {"position":"652,2887","size":"100,100"}
+@@.itemside;[img[ |18_flappingcranefirst.jpg][flappingcrane17]]<<if $branch2backwards>><<print $words_flappingcrane.t18b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="18_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="18_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |18_flappingcranelast.jpg][flappingcrane19]]<<if !$branch2backwards>><<print $words_flappingcrane.t18 >><</if>>
+@@
+
+
+
+
+:: flappingcrane19 {"position":"652,3037","size":"100,100"}
+@@.itemside;[img[ |19_flappingcranefirst.jpg][flappingcrane18]]<<if $branch2backwards>><<print $words_flappingcrane.t19b >><</if>>@@
+
+@@.itemcentral;
+<<if !$branch2backwards>><video src="19_flappingcrane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="19_flappingcrane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |19_flappingcranelast.jpg][flappingcrane20]]<<if !$branch2backwards>><<print $words_flappingcrane.t19 >><</if>>
+@@
+
+
+
+:: flappingcrane20 {"position":"652,3187","size":"100,100"}
+@@.item;[img[ |19_flappingcranelast.jpg][flappingcrane19][$branch2backwards to true]] <<set $attribute1 to either($attributes)>> <<print $attribute1>> <<print $words_flappingcrane.t20b >>@@
+@@.item;<<print $words_flappingcrane.t20 >>@@
+@@.item;[img[ |cranefinal.jpg][crane20][$branch3backwards to false]] <<set $attribute2 to either($attributes)>> <<print $attribute2>> <<print $words_crane.t19 >>@@
+
+@@.item;[img[ |flappingfinal.jpg][flapping20][$branch3backwards to false]] <<set $attribute3 to either($attributes)>> <<print $attribute3>> <<print $words_flapping.t19 >> @@
+
+
+
+
+
+
+:: crane20 {"position":"577,3337","size":"100,100"}
+@@.itemside;[img[ |20_cranefirst.jpg][flappingcrane20]]<<if $branch3backwards>><<print $words_crane.t20b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="20_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="20_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |20_cranelast.jpg][crane21]]
+<<if !$branch3backwards>><<print $words_crane.t20 >>
+<</if>>
+@@
+
+
+
+:: crane21 {"position":"577,3487","size":"100,100"}
+@@.itemside;[img[ |21_cranefirst.jpg][crane20]]<<if $branch3backwards>><<print $words_crane.t21b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="21_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="21_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |21_cranelast.jpg][crane22]]
+<<if !$branch3backwards>><<print $words_crane.t21 >>
+<</if>>
+@@
+
+
+:: crane22 {"position":"577,3637","size":"100,100"}
+@@.itemside;[img[ |22_cranefirst.jpg][crane21]]<<if $branch3backwards>><<print $words_crane.t22b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="22_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="22_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |22_cranelast.jpg][crane23]]
+<<if !$branch3backwards>><<print $words_crane.t22 >>
+<</if>>
+@@
+
+
+:: crane23 {"position":"577,3787","size":"100,100"}
+@@.itemside;[img[ |23_cranefirst.jpg][crane22]]<<if $branch3backwards>><<print $words_crane.t23b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="23_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="23_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |23_cranelast.jpg][crane24]]
+<<if !$branch3backwards>><<print $words_crane.t23 >>
+<</if>>
+@@
+
+
+:: crane24 {"position":"577,3937","size":"100,100"}
+@@.itemside;[img[ |24_cranefirst.jpg][crane23]]<<if $branch3backwards>><<print $words_crane.t24b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="24_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="24_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |24_cranelast.jpg][crane25]]
+<<if !$branch3backwards>><<print $words_crane.t24 >>
+<</if>>
+@@
+
+
+
+
+:: crane25 {"position":"577,4087","size":"100,100"}
+@@.itemside;[img[ |25_cranefirst.jpg][crane24]]<<if $branch3backwards>><<print $words_crane.t25b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="25_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="25_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |25_cranelast.jpg][crane26]]
+<<if !$branch3backwards>><<print $words_crane.t25 >>
+<</if>>
+@@
+
+
+
+:: crane26 {"position":"577,4237","size":"100,100"}
+@@.itemside;[img[ |26_cranefirst.jpg][crane25]]<<if $branch3backwards>><<print $words_crane.t26b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="26_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="26_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |26_cranelast.jpg][crane27]]
+<<if !$branch3backwards>><<print $words_crane.t26 >>
+<</if>>
+@@
+
+:: crane27 {"position":"577,4387","size":"100,100"}
+@@.itemside;[img[ |27_cranefirst.jpg][crane26]]<<if $branch3backwards>><<print $words_crane.t27b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="27_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="27_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |27_cranelast.jpg][crane28]]
+<<if !$branch3backwards>><<print $words_crane.t27 >>
+<</if>>
+@@
+
+
+
+
+:: crane28 {"position":"577,4537","size":"100,100"}
+@@.itemside;[img[ |28_cranefirst.jpg][crane27]]<<if $branch3backwards>><<print $words_crane.t28b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="28_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="28_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |28_cranelast.jpg][crane29]]
+<<if !$branch3backwards>><<print $words_crane.t28 >>
+<</if>>
+@@
+
+
+
+:: crane29 {"position":"577,4687","size":"100,100"}
+@@.itemside;[img[ |29_cranefirst.jpg][crane28]]<<if $branch3backwards>><<print $words_crane.t29b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="29_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="29_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |29_cranelast.jpg][crane30]]
+<<if !$branch3backwards>><<print $words_crane.t29 >>
+<</if>>
+@@
+
+
+:: crane30 {"position":"577,4837","size":"100,100"}
+@@.itemside;[img[ |30_cranefirst.jpg][crane29]]<<if $branch3backwards>><<print $words_crane.t30b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="30_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="30_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |30_cranelast.jpg][crane31]]
+<<if !$branch3backwards>><<print $words_crane.t30 >>
+<</if>>
+@@
+
+
+:: crane31 {"position":"577,4987","size":"100,100"}
+@@.itemside;[img[ |31_cranefirst.jpg][crane30]]<<if $branch3backwards>><<print $words_crane.t31b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="31_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="31_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |31_cranelast.jpg][crane32]]
+<<if !$branch3backwards>><<print $words_crane.t31 >>
+<</if>>
+@@
+
+
+:: crane32 {"position":"577,5137","size":"100,100"}
+@@.itemside;[img[ |32_cranefirst.jpg][crane31]]<<if $branch3backwards>><<print $words_crane.t32b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="32_crane.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="32_crane_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |32_cranelast.jpg][crane33]]
+<<if !$branch3backwards>><<print $words_crane.t32 >>
+<</if>>
+@@
+
+
+:: crane33 {"position":"577,5287","size":"100,100"}
+
+@@.item; 
+<<print $words_crane.t33 >>
+[img[|cranefinal.jpg]]
+@@
+
+@@.itemside;[img[ |32_cranelast.jpg][crane32][$branch3backwards to true]] <<print $words_crane.t33b >>↺@@
+
+
+
+:: flapping20 {"position":"727,3337","size":"100,100"}
+@@.itemside;[img[ |20_flappingfirst.jpg][flappingcrane20]]<<if $branch3backwards>><<print $words_flapping.t20b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="20_flapping.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="20_flapping_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |20_flappinglast.jpg][flapping21]]
+<<if !$branch3backwards>><<print $words_flapping.t20 >>
+<</if>>
+@@
+
+
+:: flapping21 {"position":"727,3487","size":"100,100"}
+@@.itemside;[img[ |21_flappingfirst.jpg][flapping20]]<<if $branch3backwards>><<print $words_flapping.t21b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="21_flapping.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="21_flapping_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |21_flappinglast.jpg][flapping22]]
+<<if !$branch3backwards>><<print $words_flapping.t21 >>
+<</if>>
+@@
+
+
+:: flapping22 {"position":"727,3637","size":"100,100"}
+@@.itemside;[img[ |22_flappingfirst.jpg][flapping21]]<<if $branch3backwards>><<print $words_flapping.t22b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="22_flapping.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="22_flapping_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |22_flappinglast.jpg][flapping23]]
+<<if !$branch3backwards>><<print $words_flapping.t22 >>
+<</if>>
+@@
+
+
+:: flapping23 {"position":"727,3787","size":"100,100"}
+@@.itemside;[img[ |23_flappingfirst.jpg][flapping22]]<<if $branch3backwards>><<print $words_flapping.t23b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="23_flapping.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="23_flapping_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |23_flappinglast.jpg][flapping24]]
+<<if !$branch3backwards>><<print $words_flapping.t23 >>
+<</if>>
+@@
+
+
+:: flapping24 {"position":"727,3937","size":"100,100"}
+@@.itemside;[img[ |24_flappingfirst.jpg][flapping23]]<<if $branch3backwards>><<print $words_flapping.t24b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="24_flapping.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="24_flapping_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |24_flappinglast.jpg][flapping25]]
+<<if !$branch3backwards>><<print $words_flapping.t24 >>
+<</if>>
+@@
+
+
+
+
+:: flapping25 {"position":"727,4087","size":"100,100"}
+@@.itemside;[img[ |25_flappingfirst.jpg][flapping24]]<<if $branch3backwards>><<print $words_flapping.t25b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="25_flapping.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="25_flapping_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |25_flappinglast.jpg][flapping26]]
+<<if !$branch3backwards>><<print $words_flapping.t25 >>
+<</if>>
+@@
+
+
+:: flapping26 {"position":"727,4237","size":"100,100"}
+@@.itemside;[img[ |26_flappingfirst.jpg][flapping25]]<<if $branch3backwards>><<print $words_flapping.t26b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="26_flapping.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="26_flapping_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |26_flappinglast.jpg][flapping27]]
+<<if !$branch3backwards>><<print $words_flapping.t26 >>
+<</if>>
+@@
+
+
+
+:: flapping27 {"position":"727,4387","size":"100,100"}
+@@.itemside;[img[ |27_flappingfirst.jpg][flapping26]]<<if $branch3backwards>><<print $words_flapping.t27b >>
+<</if>>@@
+
+@@.itemcentral;
+<<if !$branch3backwards>><video src="27_flapping.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<<else>><video src="27_flapping_rewind.webm" width="360" height="203" controls autoplay="autoplay"></video>
+<</if>>@@
+
+@@.itemside; 
+[img[ |27_flappinglast.jpg][flapping28]]
+<<if !$branch3backwards>><<print $words_flapping.t27 >>
+<</if>>
+@@
+
+
+
+
+
+:: flapping28 {"position":"727,4537","size":"100,100"}
+
+@@.item; 
+<<print $words_flapping.t28 >>
+[img[|flappingfinal.jpg]]
+@@
+
+@@.itemside;[img[ |27_flappinglast.jpg][flapping27][$branch3backwards to true]] <<print $words_flapping.t28b >>↺@@
+
+
+
+
+:: Intro {"position":"407,56","size":"100,100"}
+
+<<set $words_birdswan to {
+ttitle: "I was looking for",
+t00: "...an easier way",
+t01: "In theory",
+t02: "I knew how to",
+t03: "",
+t04: "like",
+t05: "a",
+t05b: "piece of paper",
+t04b: "that had",
+t03b: "memories",
+t02b: "of a past life",
+t01b: "as a tree, when it",
+ttitleb: "looked for"}>>
+
+<<set $words_flappingcrane to {
+t00: "...a difficult challenge",
+t01: "I",
+t02: "was",
+t03: "not even",
+t04: "sure",
+t05: "where",
+t06: "to start.",
+t07: "Everything",
+t08: "seemed",
+t09: "so boring",
+t10: "and",
+t11: "my head",
+t12: "felt",
+t13: "heavy.",
+t14: "Then",
+t15: "something",
+t16: "happened",
+t17: "and I",
+t18: "caught",
+t19: "a glimpse of",
+t20: "a",
+t20b: "piece of paper",
+t19b: "that",
+t18b: "had become",
+t17b: "crumbled",
+t16b: "and",
+t15b: "scratched.",
+t14b:"Yet",
+t13b: "even",
+t12b: "if",
+t11b: "nothing",
+t10b: "happened",
+t09b: "this time",
+t08b: "I knew", 
+t07b: "I could",
+t06b: "discover a",
+t05b: "",
+t04b: "secret",
+t03b: "inside",
+t02b: "if only",
+t01b: "I"}>>
+
+
+
+<<set $words_bird to {
+t04: "bird",
+t05: "But",
+t06: "I felt",
+t07: "lost",
+t08: "until",
+t09: "I met",
+t10: "paper people",
+t11: "who",
+t12: "were",
+t13: "just as",
+t14: "curious",
+t15: "as me.",
+t15b: "Still, I was searching for more..",
+t14b: "At least",
+t13b: "now I knew",
+t12b: "that",
+t11b: "I could",
+t10b: "meet",
+t09b: "other people",
+t08b: "who",
+t07b: "also",
+t06b: "find",
+t05b: "interest in"}>>
+
+<<set $words_swan to {
+t04: "swan",
+t05: "But",
+t06: "I didn't",
+t07: "believe",
+t08: "that",
+t09: "I could",
+t10: "do it",
+t11: "until",
+t12: "I finally tried.",
+t12b: "Still, there was more to explore.",
+t11b: "At least",
+t10b: "now I knew",
+t09b: "that I",
+t08b: "just need",
+t07b: "to try",
+t06b: "without comparing",
+t05b: "myself to"}>>
+
+<<set $words_flapping to {
+t19: "flapping bird",
+t20: "who",
+t21: "gave me",
+t22: "insight",
+t23: "into",
+t24: "a presumption",
+t25: "of mine",
+t26: "I never",
+t27: "really",
+t28: "thought about before.",
+t28b: "Still, I wasn't sure I understood.",
+t27b: "At least",
+t26b: "now I knew",
+t25b: "that I",
+t24b: "can",
+t23b: "take",
+t22b: "a different",
+t21b: "perspective",
+t20b: "and search for"
+}>>
+
+<<set $words_crane to {
+t19: "crane",
+t20: "who",
+t21: "reminded me",
+t22: "that",
+t23: "I",
+t24: "had",
+t25: "a habit",
+t26: "that",
+t27: "I",
+t28: "honestly",
+t29: "found",
+t30: "annoying",
+t31: "if",
+t32: "I",
+t33: "really thought about it.",
+t33b: "Now, I had to do something.",
+t32b: "At least",
+t31b: "I",
+t30b: "had",
+t29b: "a plan.",
+t28b: "I just",
+t27b: "followed",
+t26b: "it",
+t25b: "step",
+t24b: "by",
+t23b: "step",
+t22b: "and",
+t21b: "transformed myself",
+t20b: "into",
+}>>
+
+<<set $attributes to [
+"grumpy", "intelligent", "wise", "happy", "magical", "polite", "nervous", "distracted", "hungry", "loud", 
+"technophobic", "polemic", "furious", "motivated", "humorous", "exuberant", "inventive", "optimistic", "reliable", "sensible", "sincere", "tenacious", "trustworthy", "secretive", "impatient", "careless", "apathetic", "tenacious", "stubborn", "melodramatic", "zealous", "whimsical", "mysterious", "supernatural", "anxious", "scared", "shy", "experienced", "silly", "generous", "arrogant"
+]>>
+
+<<set $event_attributes to [
+"rare", "memorable", "cosmological", "historic", "unexpected", "terrible", "unique", "absurd", "disastrous", "sensational", "miraculous", "funny", "trivial", "insignificant", "inexplicable", "mysterious", "shocking", "horrible", "ordinary", "typical", "unremarkable", "quiet", "irreversible", "confusing"
+]>>
+
+<<set $things_a_bird_can_do to [
+"adapt to situations", "do tricks", "resolve puzzles", "invent constructions", "plan trips", "find the way back", "imitate dinosaurs"
+]>>
+
+@@.item;
+!Origamiventure
+!!a Learning Journey
+by Michael Schlauch
+@@
+
+@@.itemcentral;
+Learn to fold Origami figures. Tap on the right image to go forward. Tap on the left image to go back. Remember: your finished figure can still be transformed at any time. 
+What is it like to learn something new?@@
+
+@@.item;
+[img[ |swanfinal.jpg][start][$branch2backwards to false]] Tap or click on the image@@
+
+
+
